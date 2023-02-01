@@ -40,5 +40,11 @@ The CS50 course is a 11-week course. The progress should be tracked as follows:
 
 # Collaboration
 * After you have completed work on a problem set or assignment, you should commit and push your work to your personal branch.
+  * To push the current branch and set the remote as upstream, use : 
+
+  ```bash
+  git push --set-upstream origin <your-branch-name>
+  ```
+
 
 * If you would like to collaborate with other members of the group, you can create a pull request from your branch to the master branch. This allows other members of the group to review and merge your changes.
