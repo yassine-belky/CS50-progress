@@ -2,7 +2,6 @@
 __pycache__/
 *.py[cod]
 *$py.class
-week1/population/a.out
 
 # C extensions
 *.so
