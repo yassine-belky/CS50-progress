@@ -63,13 +63,13 @@ void sort_cities(void)
     for (int i = 0; i < NUM_CITIES - 1; i++)
     {
         bool swap = false;
-        for (int i = 0; i < NUM_CITIES - 1; i++)
+        for (int j = 0; j < NUM_CITIES - 1; j++)
         {
-            if (temps[i].temp < temps[i + 1].temp)
+            if (temps[j].temp < temps[j + 1].temp)
             {
-                avg_temp temp = temps[i];
-                temps[i] = temps[i + 1];
-                temps[i + 1] = temp;
+                avg_temp temp = temps[j];
+                temps[j] = temps[j + 1];
+                temps[j + 1] = temp;
                 swap = true;
             }
         }

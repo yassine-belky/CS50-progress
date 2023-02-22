@@ -26,7 +26,7 @@ The CS50 course is a 11-week course. The progress should be tracked as follows:
 | Week 0 | Scratch | DONE |
 | Week 1 | C | DONE |
 | Week 2 | Arrays | DONE |
-| Week 3 | Algorithms | ONGOING |
+| Week 3 | Algorithms | DONE |
 | Week 4 | Memory | TODO |
 | Week 5 | Data Structures | TODO |
 | Week 6 | Python | TODO |
