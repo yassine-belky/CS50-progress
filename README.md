@@ -30,7 +30,7 @@ The CS50 course is a 11-week course. The progress should be tracked as follows:
 | Week 4 | Memory | DONE |
 | Week 5 | Data Structures | DONE |
 | Week 6 | Python | DONE |
-| Week 7 | SQL | TODO |
+| Week 7 | SQL | DONE |
 | Week 8 | HTML, CSS, JavaScript | TODO |
 | Week 9 | Flask | TODO |
 | Week 10 | Emoji | TODO |
