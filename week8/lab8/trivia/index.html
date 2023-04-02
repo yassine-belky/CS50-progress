@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+    <link href="styles.css" rel="stylesheet">
+    <title>Trivia!</title>
+    <script>
+        function showHiddenDiv(hiddenDiv, content, color) {
+            hiddenDiv.style.display = "block";
+            hiddenDiv.style.color = color;
+            hiddenDiv.innerHTML = content;
+        }
+
+        function checkAnswer() {
+            var input = document.getElementById("secondPartInput");
+            var hiddenDiv = document.getElementById("secondPartHiddenDiv");
+            if (input.value === "") {
+                showHiddenDiv(hiddenDiv, "Please input some text before submitting.", "gray");
+            }
+            else if (input.value == "Switzerland") {
+                input.style.backgroundColor = "lightgreen";
+                showHiddenDiv(hiddenDiv, "Correct !", "lightgreen");
+            }
+            else {
+                input.style.backgroundColor = "lightcoral";
+                showHiddenDiv(hiddenDiv, "Incorrect !", "lightcoral");
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', function () {
+            const buttons = document.querySelectorAll(".choiceButton");
+            var hiddenDiv = document.getElementById("firstPartHiddenDiv");
+
+            buttons.forEach(function (button) {
+                button.addEventListener("click", function () {
+                    buttons.forEach(function (otherButton) {
+                        if (otherButton !== button) {
+                            otherButton.classList.remove("active");
+                            otherButton.style.backgroundColor = "";
+                        }
+                    });
+                    button.classList.add("active");
+                    if (button.innerHTML == "3 people per 1 sheep") {
+                        button.style.backgroundColor = "lightgreen";
+                        showHiddenDiv(hiddenDiv, "Correct !", "lightgreen");
+                    }
+                    else {
+                        button.style.backgroundColor = "lightcoral";
+                        showHiddenDiv(hiddenDiv, "Incorrect !", "lightcoral");
+                    }
+                });
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <div class="header">
+        <h1>Trivia!</h1>
+    </div>
+
+    <div class="container">
+        <div class="section">
+            <h2>Part 1: Multiple Choice </h2>
+            <hr>
+            <h3>What is the appropriate ratio of people to sheep in New Zealand?</h3>
+            <p class="hiddenParagraph" id="firstPartHiddenDiv"></p>
+            <button class="choiceButton">6 people per 1 sheep</button>
+            <button class="choiceButton">3 people per 1 sheep</button>
+            <button class="choiceButton">1 people per 1 sheep</button>
+            <button class="choiceButton">1 people per 3 sheep</button>
+            <button class="choiceButton">1 people per 6 sheep</button>
+        </div>
+
+        <div class="section">
+            <h2>Part 2: Free Response</h2>
+            <hr>
+            <h3>In which country is it illegal to own only one guinea pig, as a lone guinea pig might get lonely?</h3>
+            <p class="hiddenParagraph" id="secondPartHiddenDiv"></p>
+            <input id="secondPartInput" />
+            <button onclick="checkAnswer()">Check Answer</button>
+        </div>
+    </div>
+</body>
+
+</html>
