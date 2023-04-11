@@ -1,0 +1,247 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&display=swap');
+
+body {
+    font-family: 'Manrope', sans-serif;
+    background: #021A36;
+}
+
+.main {
+    margin: 10px;
+    max-width: 250px;
+    width: 50%;
+    height: 42px;
+}
+
+select {
+    display: none !important;
+}
+
+.dropdown-select {
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#40FFFFFF', endColorstr='#00FFFFFF', GradientType=0);
+    background-color: transparent;
+    border-radius: 12px;
+    border: solid 1px #fff;
+    box-sizing: border-box;
+    cursor: pointer;
+    display: block;
+    float: left;
+    font-size: 14px;
+    font-weight: normal;
+    line-height: 40px;
+    outline: none;
+    padding-left: 20px;
+    padding-right: 20px;
+    position: relative;
+    text-align: center !important;
+    color: #fff;
+    transition: all 0.2s ease-in-out;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    white-space: nowrap;
+}
+
+.dropdown-select:hover,
+.dropdown-select:focus {
+    background-color: transparent;
+    box-shadow: 0px 1.5px 5px 0px #f5f5f5;
+}
+
+.dropdown-select:active,
+.dropdown-select.open {
+    background-color: transparent !important;
+    border-color: #ffffff !important;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05) inset;
+    color: #ffffff !important;
+}
+
+.dropdown-select.open img {
+    filter: invert(100%) sepia(0%) saturate(1%) hue-rotate(104deg) brightness(111%) contrast(101%) !important;
+}
+
+/* Upward pointing arrow */
+.dropdown-select:after {
+    height: 0;
+    width: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 4px solid #ffffff;
+    -webkit-transform: origin(50% 20%);
+    transform: origin(50% 20%);
+    transition: all 0.25s ease-in-out;
+    content: '';
+    display: block;
+    margin-top: -2px;
+    pointer-events: none;
+    position: absolute;
+    right: 10px;
+    top: 50%;
+}
+
+/* Rotating the arrow */
+.dropdown-select.open:after {
+    border-top-color: #ffffff !important;
+    -webkit-transform: rotate(-180deg);
+    transform: rotate(-180deg);
+}
+
+.dropdown-select.open .list {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    opacity: 1;
+    pointer-events: auto;
+    background-color: #021A36;
+}
+
+.dropdown-select.open .option {
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: fit-content;
+    color: #ffffff;
+}
+
+.dropdown-select.open .option img,
+.dropdown-select .option img {
+    height: 12px;
+    margin-right: 5px;
+    /* Black to White filter */
+    filter: invert(100%) sepia(0%) saturate(1%) hue-rotate(104deg) brightness(111%) contrast(101%);
+}
+
+.dropdown-select.wide {
+    width: 100%;
+}
+
+.dropdown-select.unselected {
+    color: #bbb;
+}
+
+.dropdown-select.selected {
+    color: #021A36;
+    background-color: #99f2bf;
+    border-color: #021A36;
+}
+
+.dropdown-select .current {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.dropdown-select.selected .current {
+    font-weight: 600;
+}
+
+.dropdown-select.selected img {
+    height: 12px;
+    margin: 5px;
+    filter: invert(10%) sepia(22%) saturate(3441%) hue-rotate(186deg) brightness(93%) contrast(104%);
+}
+
+.dropdown-select.unselected {
+    color: #bbb !important;
+}
+
+.dropdown-select.selected:after {
+    border-top-color: #021A36;
+}
+
+.dropdown-select.wide .list {
+    left: 0 !important;
+    right: 0 !important;
+}
+
+.dropdown-select .list {
+    box-sizing: border-box;
+    transition: all 0.25s cubic-bezier(0.25, 0, 0.25, 1.75), opacity 0.25s linear;
+    -webkit-transform: scale(0.75);
+    transform: scale(0.75);
+    -webkit-transform-origin: 50% 0;
+    transform-origin: 50% 0;
+    box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.09);
+    background-color: transparent;
+    border-radius: 12px;
+    margin-top: 4px;
+    padding: 3px 0;
+    opacity: 0;
+    overflow: hidden;
+    pointer-events: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 999;
+    overflow: auto;
+    border: 1px solid #fff;
+}
+
+.dropdown-select .list:hover .option:not(:hover) {
+    background-color: transparent;
+}
+
+.dropdown-select .dd-search {
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0.5rem;
+}
+
+.dropdown-select .dd-searchbox {
+    width: 90%;
+    border: 1px solid #ffffff;
+    border-color: #ffffff;
+    padding: 9px 4px 9px 40px;
+    background: transparent url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' class='bi bi-search' viewBox='0 0 16 16'%3E%3Cpath fill='%23ffffff' d='M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z'%3E%3C/path%3E%3C/svg%3E") no-repeat 13px center;
+    border-radius: 12px;
+    outline: none;
+    color: #ffffff;
+    font-family: 'Manrope';
+}
+
+.dropdown-select .dd-searchbox:focus {
+    border-color: #99f2bf;
+    background: transparent url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' class='bi bi-search' viewBox='0 0 16 16'%3E%3Cpath fill='%2399f2bf' d='M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z'%3E%3C/path%3E%3C/svg%3E") no-repeat 13px center;
+}
+
+.dropdown-select .list ul {
+    padding: 0;
+}
+
+.dropdown-select .option {
+    cursor: default;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #ffffff;
+    outline: none;
+    transition: all 0.2s;
+    list-style: none;
+}
+
+.dropdown-select .option:hover {
+    color: #021A36;
+    background-color: #99f2bf;
+}
+
+.dropdown-select .option:focus {
+    color: #021A36;
+    background-color: #99f2bf;
+}
+
+.dropdown-select .option:focus img,
+.dropdown-select .option:hover img {
+    filter: invert(10%) sepia(22%) saturate(3441%) hue-rotate(186deg) brightness(93%) contrast(104%) !important;
+}
+
+.dropdown-select .option.selected {
+    font-weight: 600;
+    color: #99f2bf;
+    background-color: transparent;
+}
+
+.dropdown-select .option.selected img {
+    filter: invert(90%) sepia(4%) saturate(3643%) hue-rotate(85deg) brightness(102%) contrast(90%) !important;
+}
