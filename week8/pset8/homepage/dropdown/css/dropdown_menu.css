@@ -5,18 +5,15 @@ body {
     background: #021A36;
 }
 
-.main {
+dropdown-menu {
+    display: flex;
     margin: 10px;
     max-width: 250px;
     width: 50%;
     height: 42px;
 }
 
-select {
-    display: none !important;
-}
-
-.dropdown-select {
+dropdown-menu .dropdown-select {
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#40FFFFFF', endColorstr='#00FFFFFF', GradientType=0);
     background-color: transparent;
     border-radius: 12px;
@@ -42,26 +39,26 @@ select {
     white-space: nowrap;
 }
 
-.dropdown-select:hover,
-.dropdown-select:focus {
+dropdown-menu .dropdown-select:hover,
+dropdown-menu .dropdown-select:focus {
     background-color: transparent;
     box-shadow: 0px 1.5px 5px 0px #f5f5f5;
 }
 
-.dropdown-select:active,
-.dropdown-select.open {
+dropdown-menu .dropdown-select:active,
+dropdown-menu .dropdown-select.open {
     background-color: transparent !important;
     border-color: #ffffff !important;
     box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05) inset;
     color: #ffffff !important;
 }
 
-.dropdown-select.open img {
+dropdown-menu .dropdown-select.open img {
     filter: invert(100%) sepia(0%) saturate(1%) hue-rotate(104deg) brightness(111%) contrast(101%) !important;
 }
 
 /* Upward pointing arrow */
-.dropdown-select:after {
+dropdown-menu .dropdown-select:after {
     height: 0;
     width: 0;
     border-left: 4px solid transparent;
@@ -80,13 +77,13 @@ select {
 }
 
 /* Rotating the arrow */
-.dropdown-select.open:after {
+dropdown-menu .dropdown-select.open:after {
     border-top-color: #ffffff !important;
     -webkit-transform: rotate(-180deg);
     transform: rotate(-180deg);
 }
 
-.dropdown-select.open .list {
+dropdown-menu .dropdown-select.open .list {
     -webkit-transform: scale(1);
     transform: scale(1);
     opacity: 1;
@@ -94,7 +91,7 @@ select {
     background-color: #021A36;
 }
 
-.dropdown-select.open .option {
+dropdown-menu .dropdown-select.open .option {
     cursor: pointer;
     display: flex;
     justify-content: center;
@@ -103,58 +100,46 @@ select {
     color: #ffffff;
 }
 
-.dropdown-select.open .option img,
-.dropdown-select .option img {
-    height: 12px;
-    margin-right: 5px;
-    /* Black to White filter */
-    filter: invert(100%) sepia(0%) saturate(1%) hue-rotate(104deg) brightness(111%) contrast(101%);
-}
-
-.dropdown-select.wide {
+dropdown-menu .dropdown-select.wide {
     width: 100%;
 }
 
-.dropdown-select.unselected {
-    color: #bbb;
+dropdown-menu .dropdown-select.unselected {
+    color: #bbb !important;
 }
 
-.dropdown-select.selected {
+dropdown-menu .dropdown-select.selected {
     color: #021A36;
     background-color: #99f2bf;
     border-color: #021A36;
 }
 
-.dropdown-select .current {
+dropdown-menu .dropdown-select .current {
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.dropdown-select.selected .current {
+dropdown-menu .dropdown-select.selected .current {
     font-weight: 600;
 }
 
-.dropdown-select.selected img {
+dropdown-menu .dropdown-select.selected img {
     height: 12px;
     margin: 5px;
     filter: invert(10%) sepia(22%) saturate(3441%) hue-rotate(186deg) brightness(93%) contrast(104%);
 }
 
-.dropdown-select.unselected {
-    color: #bbb !important;
-}
-
-.dropdown-select.selected:after {
+dropdown-menu .dropdown-select.selected:after {
     border-top-color: #021A36;
 }
 
-.dropdown-select.wide .list {
+dropdown-menu .dropdown-select.wide .list {
     left: 0 !important;
     right: 0 !important;
 }
 
-.dropdown-select .list {
+dropdown-menu .dropdown-select .list {
     box-sizing: border-box;
     transition: all 0.25s cubic-bezier(0.25, 0, 0.25, 1.75), opacity 0.25s linear;
     -webkit-transform: scale(0.75);
@@ -177,11 +162,11 @@ select {
     border: 1px solid #fff;
 }
 
-.dropdown-select .list:hover .option:not(:hover) {
+dropdown-menu .dropdown-select .list:hover .option:not(:hover) {
     background-color: transparent;
 }
 
-.dropdown-select .dd-search {
+dropdown-menu .dropdown-select .dd-search {
     overflow: hidden;
     display: flex;
     align-items: center;
@@ -189,7 +174,7 @@ select {
     margin: 0.5rem;
 }
 
-.dropdown-select .dd-searchbox {
+dropdown-menu .dropdown-select .dd-searchbox {
     width: 90%;
     border: 1px solid #ffffff;
     border-color: #ffffff;
@@ -201,16 +186,17 @@ select {
     font-family: 'Manrope';
 }
 
-.dropdown-select .dd-searchbox:focus {
+dropdown-menu .dropdown-select .dd-searchbox:focus {
     border-color: #99f2bf;
     background: transparent url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' class='bi bi-search' viewBox='0 0 16 16'%3E%3Cpath fill='%2399f2bf' d='M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z'%3E%3C/path%3E%3C/svg%3E") no-repeat 13px center;
 }
 
-.dropdown-select .list ul {
+dropdown-menu .dropdown-select .list ul {
     padding: 0;
+    margin: 0;
 }
 
-.dropdown-select .option {
+dropdown-menu .dropdown-select .option {
     cursor: default;
     display: flex;
     justify-content: center;
@@ -221,27 +207,27 @@ select {
     list-style: none;
 }
 
-.dropdown-select .option:hover {
+dropdown-menu .dropdown-select .option:hover {
     color: #021A36;
     background-color: #99f2bf;
 }
 
-.dropdown-select .option:focus {
+dropdown-menu .dropdown-select .option:focus {
     color: #021A36;
-    background-color: #99f2bf;
+    background-color: #99f2bf !important;
 }
 
-.dropdown-select .option:focus img,
-.dropdown-select .option:hover img {
+dropdown-menu .dropdown-select .option:focus img,
+dropdown-menu .dropdown-select .option:hover img {
     filter: invert(10%) sepia(22%) saturate(3441%) hue-rotate(186deg) brightness(93%) contrast(104%) !important;
 }
 
-.dropdown-select .option.selected {
+dropdown-menu .dropdown-select .option.selected {
     font-weight: 600;
     color: #99f2bf;
-    background-color: transparent;
+    background-color: transparent !important;
 }
 
-.dropdown-select .option.selected img {
+dropdown-menu .dropdown-select .option.selected img {
     filter: invert(90%) sepia(4%) saturate(3643%) hue-rotate(85deg) brightness(102%) contrast(90%) !important;
 }

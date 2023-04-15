@@ -3,25 +3,24 @@
 <html lang="en">
 
 <head>
-    <link href="css/dropdown.css" rel="stylesheet">
+    <link href="css/dropdown_option.css" rel="stylesheet">
+    <link href="css/dropdown_menu.css" rel="stylesheet">
     <title>Dropdown</title>
 </head>
 
 <body>
-    <div class="main">
-        <select name="">
-            <option selected disabled>Choose a DSP</option>
-            <option value="1" icon="svg/xandr.svg">Xandr</option>
-            <option value="2" icon="svg/dbm.svg">DBM</option>
-            <option value="3" icon="svg/trueview.svg">TrueView</option>
-            <option value="4" icon="svg/beeswax.svg">Beeswax</option>
-            <option value="5" icon="svg/thetradedesk.svg">TheTradeDesk</option>
-            <option value="6" icon="svg/mediamath.svg">MediaMath</option>
-        </select>
-    </div>
+    <dropdown-menu placeholder="Choose DSP">
+        <dropdown-option value="1" icon="svg/xandr.svg">Xandr</dropdown-option>
+        <dropdown-option value="2" icon="svg/dbm.svg">DBM</dropdown-option>
+        <dropdown-option value="3" icon="svg/trueview.svg">TrueView</dropdown-option>
+        <dropdown-option value="4" icon="svg/beeswax.svg">Beeswax</dropdown-option>
+        <dropdown-option value="5" icon="svg/thetradedesk.svg">TheTradeDesk</dropdown-option>
+        <dropdown-option value="6" icon="svg/mediamath.svg">MediaMath</dropdown-option>
+    </dropdown-menu>
     <div>Bla Bla Bla</div>
     <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
-    <script src="js/dropdown.js"></script>
+    <script src="js/dropdown_option.js"></script>
+    <script src="js/dropdown_menu.js"></script>
 </body>
 
 </html>
