@@ -3,8 +3,11 @@
 <html lang="en">
 
 <head>
-    <link href="css/index.css" rel="stylesheet">
-    <link href="css/styles.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="button/css/button.css">
+    <link rel="stylesheet" href="dropdown/css/dropdown_option.css">
+    <link rel="stylesheet" href="dropdown/css/dropdown_menu.css">
     <title>My Webpage</title>
 </head>
 
@@ -15,13 +18,77 @@
             <h1>Testing Interface</h1>
         </div>
     </div>
-    <div>-- General Inputs --
-        <div>Test Type</div>
-        <div>DSP</div>
-        <div>Block</div>
-        <div>Automatic Input Selection</div>
-        <div>Keep Machine Up</div>
-        <div>Filter Out Errors</div>
+    <div class="test_interf__gen_input">
+        <div class="test_interf__gen_input-title">
+            <h2>General Inputs</h2>
+        </div>
+        <div class="test_interf__gen_input-container">
+            <div class="test_interf__gen_input-container-title">
+                <div></div>
+                <h3>Testing Type</h3>
+            </div>
+            <div class="test_interf__gen_input-container-btn">
+                <toggle-button ltext="preprocessing only" rtext="preprocessing & testing"></toggle-button>
+            </div>
+        </div>
+        <div class="test_interf__gen_input-container">
+            <div class="test_interf__gen_input-container-title">
+                <div></div>
+                <h3>DSP</h3>
+            </div>
+            <div class="test_interf__gen_input-container-btn">
+                <dropdown-menu placeholder="Choose a DSP">
+                    <dropdown-option value="1" icon="svg/xandr.svg">Xandr</dropdown-option>
+                    <dropdown-option value="2" icon="svg/dbm.svg">DBM</dropdown-option>
+                    <dropdown-option value="3" icon="svg/trueview.svg">TrueView</dropdown-option>
+                    <dropdown-option value="4" icon="svg/beeswax.svg">Beeswax</dropdown-option>
+                    <dropdown-option value="5" icon="svg/thetradedesk.svg">TheTradeDesk</dropdown-option>
+                    <dropdown-option value="6" icon="svg/mediamath.svg">MediaMath</dropdown-option>
+                </dropdown-menu>
+            </div>
+        </div>
+        <div class="test_interf__gen_input-container">
+            <div class="test_interf__gen_input-container-title">
+                <div></div>
+                <h3>Block Name</h3>
+            </div>
+            <div class="test_interf__gen_input-container-btn" id="block-name-btn">
+                <dropdown-menu with-search placeholder="Choose a Block" search-placeholder="Search for block name">
+                    <dropdown-option value="1">InitTransitionTable</dropdown-option>
+                    <dropdown-option value="2">MathCodeBlockWorkflow</dropdown-option>
+                    <dropdown-option value="3">DSPTranslationBlock</dropdown-option>
+                    <dropdown-option value="4">ComputeAverageBid</dropdown-option>
+                    <dropdown-option value="5">LaunchApplyStrat</dropdown-option>
+                </dropdown-menu>
+            </div>
+        </div>
+        <div class="test_interf__gen_input-container">
+            <div class="test_interf__gen_input-container-title">
+                <div></div>
+                <h3>Automatic Input Selection</h3>
+            </div>
+            <div class="test_interf__gen_input-container-btn">
+                <toggle-button ltext="off" rtext="on"></toggle-button>
+            </div>
+        </div>
+        <div class="test_interf__gen_input-container">
+            <div class="test_interf__gen_input-container-title">
+                <div></div>
+                <h3>Keep Machine Up</h3>
+            </div>
+            <div class="test_interf__gen_input-container-btn">
+                <toggle-button ltext="no" rtext="yes"></toggle-button>
+            </div>
+        </div>
+        <div class="test_interf__gen_input-container">
+            <div class="test_interf__gen_input-container-title">
+                <div></div>
+                <h3>Filter Out Errors</h3>
+            </div>
+            <div class="test_interf__gen_input-container-btn">
+                <toggle-button ltext="no" rtext="yes"></toggle-button>
+            </div>
+        </div>
     </div>
     <div>
         <div>Control Branch</div>
@@ -44,6 +111,9 @@
         <div>Day</div>
     </div>
     <div>Launch Test</div>
+    <script src="button/js/button.js"></script>
+    <script src="dropdown/js/dropdown_option.js"></script>
+    <script src="dropdown/js/dropdown_menu.js"></script>
 </body>
 
 </html>

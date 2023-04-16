@@ -3,6 +3,7 @@ class dropdownMenu extends HTMLElement {
         super();
         const placeholderText = this.getAttribute("placeholder");
         const withSearch = this.hasAttribute("with-search");
+        const searchPlaceholder = this.getAttribute('search-placeholder');
 
         // Create the dropdown-select element and set its attributes and classes
         const dropdownSelect = document.createElement('div');
@@ -29,7 +30,7 @@ class dropdownMenu extends HTMLElement {
             const searchInput = document.createElement('input');
             searchInput.setAttribute('autocomplete', 'off');
             searchInput.setAttribute('type', 'text');
-            searchInput.setAttribute('placeholder', 'Search DSP');
+            searchInput.setAttribute('placeholder', searchPlaceholder);
             searchInput.classList.add('dd-searchbox');
             searchDiv.appendChild(searchInput);
             list.appendChild(searchDiv);

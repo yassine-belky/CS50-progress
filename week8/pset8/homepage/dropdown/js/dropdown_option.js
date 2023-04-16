@@ -14,15 +14,18 @@ class dropdownOption extends HTMLElement {
         optionElem.setAttribute('data-display-text', displayText);
         optionElem.textContent = innerText;
 
-        const imgElem = document.createElement('img');
-        imgElem.setAttribute('src', iconPath);
 
         const optionDiv = document.createElement('div');
         optionDiv.classList.add('option');
         if (isSelected) {
             optionDiv.classList.add(isSelected);
         }
-        optionDiv.appendChild(imgElem);
+
+        if (iconPath) {
+            const imgElem = document.createElement('img');
+            imgElem.setAttribute('src', iconPath);
+            optionDiv.appendChild(imgElem);
+        }
         optionDiv.appendChild(optionElem);
 
         this.textContent = '';
