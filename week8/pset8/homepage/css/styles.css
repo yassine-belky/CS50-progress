@@ -25,7 +25,7 @@ body {
 
 .test_interf__title-wrapper {
     margin: 1rem 0;
-    width: 450px;
+    width: fit-content;
     height: 50px;
     display: flex;
     justify-content: center;
@@ -54,20 +54,43 @@ body {
     font-size: 12px;
 }
 
+.test_interf__gen_input dropdown-menu .dropdown-select.open .list {
+    background-color: #0B427F;
+}
+
 .test_interf__gen_input {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    margin: 0 20px;
+    /* ff 3.6+ */
+    background: -moz-radial-gradient(circle at top left, rgba(11, 66, 127, 1) 0%, rgba(11, 66, 127, 1) 25%, rgba(11, 66, 127, 1) 85%, rgba(153, 242, 191, 1) 100%);
+
+    /* safari 5.1+,chrome 10+ */
+    background: -webkit-radial-gradient(circle at top left, rgba(11, 66, 127, 1) 0%, rgba(11, 66, 127, 1) 25%, rgba(11, 66, 127, 1) 85%, rgba(153, 242, 191, 1) 100%);
+
+    /* opera 11.10+ */
+    background: -o-radial-gradient(circle at top left, rgba(11, 66, 127, 1) 0%, rgba(11, 66, 127, 1) 25%, rgba(11, 66, 127, 1) 85%, rgba(153, 242, 191, 1) 100%);
+
+    /* ie 10+ */
+    background: -ms-radial-gradient(circle at top left, rgba(11, 66, 127, 1) 0%, rgba(11, 66, 127, 1) 25%, rgba(11, 66, 127, 1) 85%, rgba(153, 242, 191, 1) 100%);
+
+    /* global 92%+ browsers support */
+    background: radial-gradient(circle at top left, rgba(11, 66, 127, 1) 0%, rgba(11, 66, 127, 1) 25%, rgba(11, 66, 127, 1) 85%, rgba(153, 242, 191, 1) 100%);
 }
 
 .test_interf__gen_input-title {
     margin-bottom: 32px;
+    background-color: #99f2bf;
+    border-radius: 0 0 12px 12px;
+    padding: 10px 20px;
 }
 
 .test_interf__gen_input-title h2 {
-    font-weight: 500;
-    color: #99f2bf;
+    font-weight: 700;
+    font-size: 20px;
+    color: #0B427F;
     margin: 0;
 }
 
