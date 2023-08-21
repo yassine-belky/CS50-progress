@@ -1,0 +1,33 @@
+.fancy-date-input {
+    display: flex;
+    align-items: center;
+}
+
+.fancy-date-input input[type="number"] {
+    width: 2.5em;
+    border: 2px solid #bbb;
+    border-radius: 4px;
+    font-size: 1em;
+    text-align: center;
+}
+
+.fancy-date-input input[type="number"]::-webkit-inner-spin-button,
+.fancy-date-input input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.fancy-date-input input[type="number"]:focus {
+    outline: none;
+    border: 2px solid #36a9e1;
+}
+
+.fancy-date-input input[type="number"]:not(:last-child) {
+    border-right: none;
+}
+
+.fancy-date-input .dash {
+    font-size: 1.5em;
+    margin: 0 8px;
+    color: #bbb;
+}
